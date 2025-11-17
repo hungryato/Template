@@ -50,8 +50,10 @@
   </nav>
 </template>
 
-<script setup>
-const menuList = [
+<script setup lang="ts">
+import type { MainMenuItem } from "@/types/menu";
+
+const menuList: MainMenuItem[] = [
   {
     label: "1Depth-1",
     trigger: "gnb",
@@ -67,7 +69,6 @@ const menuList = [
       },
       {
         label: "1-2Depth-2",
-        isLink: false,
         trigger: "gnb",
         title: "1-2Depth-2 title",
         children: [
@@ -77,7 +78,6 @@ const menuList = [
       },
       {
         label: "1-2Depth-3",
-        isLink: false,
         trigger: "gnb",
         title: "1-2Depth-3 title",
         children: [
@@ -102,7 +102,6 @@ const menuList = [
       },
       {
         label: "2-2Depth-2",
-        isLink: false,
         trigger: "gnb",
         title: "2-2Depth-2 title",
         children: [
@@ -112,7 +111,6 @@ const menuList = [
       },
       {
         label: "2-2Depth-3",
-        isLink: false,
         trigger: "gnb",
         title: "2-2Depth-3 title",
         children: [
