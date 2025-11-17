@@ -21,10 +21,11 @@ template/
 ## 주요 특징
 
 - **모노레포 관리**: npm workspaces로 여러 프레임워크 템플릿을 한 번에 관리
-- **KRDS 디자인 시스템**: React, Vue 모두에서 krds 패키지 사용
+- **KRDS 디자인 시스템**: React, Vue 모두에서 krds-uiux 패키지 사용
 - **Vite 기반**: 빠른 번들링과 개발 서버, HMR 지원
 - **프로젝트별 독립성**: 각 템플릿별로 독립적인 설정 및 의존성 관리
 - **ESLint 적용**: 코드 품질 유지를 위한 린트 규칙 적용
+- **컴포넌트 분리**: Header, SideMenu, Content 등 주요 UI 컴포넌트 분리 설계
 
 ---
 
@@ -32,7 +33,7 @@ template/
 
 ### 1. 의존성 설치
 
-루트 디렉터리에서 한 번에 모든 의존성을 설치합니다.
+루트 디렉터리에서 모든 의존성을 한 번에 설치합니다.
 
 ```bash
 npm install
@@ -40,7 +41,7 @@ npm install
 
 ### 2. 개발 서버 실행
 
-각 템플릿 폴더로 이동해서 실행하거나, 루트에서 워크스페이스 명령어로 실행할 수 있습니다.
+각 템플릿 폴더에서 실행하거나, 루트에서 워크스페이스 명령어로 실행할 수 있습니다.
 
 #### React 템플릿
 
@@ -48,7 +49,9 @@ npm install
 cd react-template
 npm run dev
 ```
+
 또는
+
 ```bash
 npm --workspace react-template run dev
 ```
@@ -59,7 +62,9 @@ npm --workspace react-template run dev
 cd vue-template
 npm run dev
 ```
+
 또는
+
 ```bash
 npm --workspace vue-template run dev
 ```
@@ -76,18 +81,22 @@ npm run build
 
 ## KRDS 디자인 시스템 사용
 
-두 템플릿 모두 `krds` 패키지를 의존성에 포함하고 있습니다.  
+두 템플릿 모두 `krds-uiux` 패키지를 의존성에 포함하고 있습니다.  
 컴포넌트에서 아래와 같이 KRDS 디자인 시스템을 사용할 수 있습니다.
 
 ```js
 // React 예시
-import { Button } from 'krds';
+import "krds-uiux/resources/css/krds-uiux.css";
+import { Button } from "krds-uiux";
 ```
 
 ```js
 // Vue 예시
-import { Button } from 'krds';
+import "krds-uiux/resources/css/krds-uiux.css";
+import { Button } from "krds-uiux";
 ```
+
+> SCSS를 직접 사용할 경우, krds-uiux의 `/resources` 디렉터리를 복제하고 SCSS 내 경로를 직접 수정해야 합니다.
 
 ---
 

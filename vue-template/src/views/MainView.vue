@@ -11,8 +11,8 @@
 </template>
 
 <script setup>
-import Header from "../components/Header.vue";
-import SideMenu from "../components/SideMenu.vue";
+import Header from "../components/layout/Header.vue";
+import SideMenu from "../components/layout/SideMenu.vue";
 import Content from "../components/Content.vue";
 </script>
 
