@@ -28,12 +28,74 @@
    npm run build
    ```
 
+---
+
+## TypeScript로 변환하는 방법
+
+1. **TypeScript 및 타입 지원 패키지 설치**
+   ```bash
+   npm install --save-dev typescript @types/node @vitejs/plugin-vue-jsx vue-tsc
+   ```
+
+2. **tsconfig.json 생성**
+   ```bash
+   npx tsc --init
+   ```
+   또는 아래와 같이 직접 생성:
+   ```json
+   {
+     "compilerOptions": {
+       "target": "ESNext",
+       "module": "ESNext",
+       "moduleResolution": "Node",
+       "strict": true,
+       "jsx": "preserve",
+       "importHelpers": true,
+       "esModuleInterop": true,
+       "allowJs": true,
+       "sourceMap": true,
+       "baseUrl": ".",
+       "types": ["node"],
+       "paths": {
+         "@/*": ["src/*"]
+       }
+     },
+     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
+   }
+   ```
+
+3. **Vite 설정 파일을 TypeScript로 변경**
+   - `vite.config.js` → `vite.config.ts`로 이름 변경
+   - 내부 코드에서 타입 지원
+
+4. **엔트리 파일 및 컴포넌트 수정**
+   - `src/main.js` → `src/main.ts`로 변경
+   - 각 컴포넌트의 `<script setup>`에 `lang="ts"` 추가  
+     예시:
+     ```vue
+     <script setup lang="ts">
+     import { ref } from 'vue'
+     // 타입 선언 등 추가
+     </script>
+     ```
+
+5. **타입 체크 및 개발 서버 실행**
+   - 타입 체크:  
+     ```bash
+     npx vue-tsc --noEmit
+     ```
+   - 개발 서버 실행:  
+     ```bash
+     npm run dev
+     ```
+
+---
+
 ## 참고 자료
 
 - [Vite 공식 문서](https://vitejs.dev/)
 - [Vue 공식 문서](https://vuejs.org/)
 - [script setup 문서](https://vuejs.org/guide/extras/composition-api-faq.html#script-setup)
 - [IDE 지원 가이드](https://vuejs.org/guide/scaling-up/tooling.html#ide-support)
-
----
-이 템플릿을 기반으로 자유롭게 프로젝트를 확장해보세요!
+- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)
+- [Vue + TypeScript 가이드](https://vuejs.org/guide/typescript/overview.html)
