@@ -11,9 +11,9 @@
 </template>
 
 <script setup>
-import Header from "../components/layout/Header.vue";
-import SideMenu from "../components/layout/SideMenu.vue";
-import Content from "../components/Content.vue";
+import Header from "../components/layout/HeaderView.vue";
+import SideMenu from "../components/layout/SideMenuView.vue";
+import Content from "../components/ContentView.vue";
 </script>
 
 <style scoped></style>

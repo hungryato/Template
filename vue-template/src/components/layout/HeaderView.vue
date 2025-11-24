@@ -26,8 +26,8 @@
 </template>
 
 <script setup>
-import HeaderUtility from "../header/HeaderUtility.vue";
-import HeaderBranding from "../header/HeaderBranding.vue";
-import HeaderMenu from "../header/HeaderMenu.vue";
-import MobileMenu from "../header/MobileMenu.vue";
+import HeaderUtility from "../header/HeaderUtilityView.vue";
+import HeaderBranding from "../header/HeaderBrandingView.vue";
+import HeaderMenu from "../header/HeaderMenuView.vue";
+import MobileMenu from "../header/MobileMenuView.vue";
 </script>
