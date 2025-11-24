@@ -51,5 +51,5 @@
 </template>
 
 <script setup lang="ts">
-import { menuList } from "@/data/headerMenu";
+import { menuList } from "@/data/headerMenuData.ts";
 </script>
