@@ -1,17 +1,34 @@
-<template>
-  <main class="content">
-    <h2>메인 컨텐츠 영역</h2>
-    <p>여기에 주요 내용을 표시합니다.</p>
-  </main>
+<template><!-- tab -->
+
+  <div class="krds-tab-area full">
+    <!-- tab list -->
+    <div class="tab fill">
+      <ul role="tablist">
+        <li id="tab_login_01" role="tab" aria-selected="true" aria-controls="panel_login_01" class="active">
+          <button type="button" class="btn-tab">타이틀 1<i class="sr-only created"> 선택됨</i></button>
+        </li>
+        <li id="tab_login_02" role="tab" aria-selected="false" aria-controls="panel_login_02">
+          <button type="button" class="btn-tab">타이틀 2</button>
+        </li>
+      </ul>
+    </div>
+    <!-- //tab list -->
+
+    <!-- tab contents -->
+    <div class="tab-conts-wrap">
+      <section id="panel_login_01" aria-labelledby="tab_login_01" class="tab-conts active" data-quick-nav="false">
+        <h3 class="sr-only">탭 영역 타이틀</h3>
+        탭 1 영역
+      </section>
+      <section id="panel_login_02" aria-labelledby="tab_login_02" class="tab-conts" data-quick-nav="false">
+        <h3 class="sr-only">탭 영역 타이틀</h3>
+        탭 2 영역
+      </section>
+    </div>
+    <!-- //tab contents -->
+  </div>
+  <!-- //tab -->
 </template>
 
 <script setup>
 </script>
-
-<style scoped>
-.content {
-  flex: 1;
-  padding: 32px;
-  background: #fff;
-}
-</style>

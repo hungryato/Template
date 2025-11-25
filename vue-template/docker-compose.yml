@@ -5,14 +5,9 @@ services:
       dockerfile: Dockerfile
     ports:
       - "5173:5173"
-    develop:
-      watch:
-        - path: ./src
-          target: /app/src
-          action: sync
-        - path: ./package.json
-          target: /app/package.json
-          action: restart
-        - path: ./vite.config.js
-          target: /app/vite.config.js
-          action: restart
+    volumes:
+      - ./src:/app/src
+      - ./package.json:/app/package.json
+      - ./vite.config.ts:/app/vite.config.ts
+    environment:
+      NODE_ENV: development
